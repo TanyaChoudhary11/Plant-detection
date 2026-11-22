@@ -201,6 +201,40 @@ st.markdown(
       footer {
         visibility: hidden;
       }
+      /* Force tab labels to stay readable */
+div[data-testid="stTabs"] button[role="tab"],
+div[data-testid="stTabs"] button[role="tab"] span,
+div[data-testid="stTabs"] button[role="tab"] p {
+  color: #173d29 !important;
+  -webkit-text-fill-color: #173d29 !important;
+  opacity: 1 !important;
+}
+
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"],
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] span,
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: #1f633e !important;
+  opacity: 1 !important;
+}
+
+/* Make the Upload button label and icon white */
+div[data-testid="stFileUploader"] button {
+  background-color: #1f633e !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+div[data-testid="stFileUploader"] button span,
+div[data-testid="stFileUploader"] button p,
+div[data-testid="stFileUploader"] button svg {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  fill: #ffffff !important;
+  opacity: 1 !important;
+}
     </style>
     """,
     unsafe_allow_html=True,
