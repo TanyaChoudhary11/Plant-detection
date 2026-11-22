@@ -29,7 +29,33 @@ st.markdown(
       .hero h1 { color:#fffef5; font-size:clamp(2.2rem,5vw,3.35rem); line-height:1.08; margin:.55rem 0 .65rem; }
       .hero p { color:#d4e2d2; font-size:1.06rem; max-width:720px; margin:0; }
       .subtle { color:#5a7264; }
-      div[data-testid="stFileUploader"] section { border:1px dashed #73977c; background:#fffef8; border-radius:16px; }
+      /* High-contrast photo-source tabs: clear in both selected and idle states. */
+      div[data-testid="stTabs"] button[role="tab"] {
+        color:#214634 !important; background:#e5eee5 !important;
+        border:1px solid #8ba993 !important; border-radius:10px 10px 0 0 !important;
+        font-weight:700 !important; padding:.65rem 1.15rem !important;
+      }
+      div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+        color:#ffffff !important; background:#1f633e !important;
+        border-color:#1f633e !important;
+      }
+      div[data-testid="stTabs"] button[role="tab"] p { color:inherit !important; }
+      div[data-testid="stTabs"] [data-baseweb="tab-highlight"] { background:#1f633e !important; }
+      div[data-testid="stFileUploader"] section {
+        border:2px dashed #5e886b !important; background:#ffffff !important;
+        border-radius:16px; color:#203c2c !important;
+      }
+      div[data-testid="stFileUploader"] section div,
+      div[data-testid="stFileUploader"] section span,
+      div[data-testid="stFileUploader"] section small { color:#344f3e !important; }
+      div[data-testid="stFileUploader"] button,
+      div[data-testid="stCameraInput"] button {
+        background:#1f633e !important; color:#ffffff !important;
+        border:1px solid #1f633e !important; border-radius:9px !important;
+        font-weight:700 !important;
+      }
+      div[data-testid="stFileUploader"] button:hover,
+      div[data-testid="stCameraInput"] button:hover { background:#174c2e !important; }
       div[data-testid="stCameraInput"] { border-radius:16px; overflow:hidden; }
       div.stButton > button, div[data-testid="stDownloadButton"] button { border-radius:10px; font-weight:700; min-height:2.8rem; }
       div.stButton > button[kind="primary"] { background:#2e754b; border-color:#2e754b; }
@@ -161,4 +187,3 @@ st.caption(
     "PlantDoc research project. Results can be wrong, especially on field photos or unfamiliar conditions. "
     "Use this tool for learning and demonstration, not for treatment decisions."
 )
-
