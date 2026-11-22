@@ -266,6 +266,15 @@ div[data-testid="stFileUploader"] button * {
   fill: #ffffff !important;
   opacity: 1 !important;
 }
+/* Make the photo-source question and radio choices dark and readable */
+div[data-testid="stRadio"],
+div[data-testid="stRadio"] *,
+div[data-testid="stFileUploader"] label,
+div[data-testid="stFileUploader"] label * {
+  color: #173d29 !important;
+  -webkit-text-fill-color: #173d29 !important;
+  opacity: 1 !important;
+}
     </style>
     """,
     unsafe_allow_html=True,
