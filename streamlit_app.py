@@ -299,23 +299,25 @@ with st.sidebar:
 
 st.markdown("#### Add a photo")
 
-upload_tab, camera_tab = st.tabs(["📁  Upload photo", "📷  Use camera"])
+photo_source = st.radio(
+    "Choose how to add your photo",
+    ["Upload a photo", "Use the camera"],
+    horizontal=True,
+    key="photo_source",
+)
 
-with upload_tab:
+uploaded = None
+camera_photo = None
+
+if photo_source == "Upload a photo":
     uploaded = st.file_uploader(
-        "Choose one clear leaf image",
+        "Choose a clear leaf image (JPG or PNG)",
         type=["jpg", "jpeg", "png"],
-        label_visibility="collapsed",
     )
-
-with camera_tab:
-    camera_photo = st.camera_input(
-        "Take a photo of a leaf",
-        label_visibility="collapsed",
-    )
+else:
+    camera_photo = st.camera_input("Take a photo of a leaf")
 
 photo = camera_photo if camera_photo is not None else uploaded
-
 
 @st.cache_resource
 def load_model(model_path: str):
