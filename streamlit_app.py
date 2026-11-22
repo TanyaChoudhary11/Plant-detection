@@ -235,6 +235,37 @@ div[data-testid="stFileUploader"] button svg {
   fill: #ffffff !important;
   opacity: 1 !important;
 }
+/* Force readable colors on Streamlit's photo tabs */
+div[data-testid="stTabs"] button[data-baseweb="tab"] {
+  color: #173d29 !important;
+  -webkit-text-fill-color: #173d29 !important;
+  background: #e3ede3 !important;
+  opacity: 1 !important;
+}
+
+div[data-testid="stTabs"] button[data-baseweb="tab"] *,
+div[data-testid="stTabs"] button[role="tab"] * {
+  color: #173d29 !important;
+  -webkit-text-fill-color: #173d29 !important;
+  opacity: 1 !important;
+}
+
+div[data-testid="stTabs"] button[data-baseweb="tab"][aria-selected="true"],
+div[data-testid="stTabs"] button[data-baseweb="tab"][aria-selected="true"] * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: #1f633e !important;
+  opacity: 1 !important;
+}
+
+/* Force readable text and icon on the Upload button */
+div[data-testid="stFileUploader"] button,
+div[data-testid="stFileUploader"] button * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  fill: #ffffff !important;
+  opacity: 1 !important;
+}
     </style>
     """,
     unsafe_allow_html=True,
